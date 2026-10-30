@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff7fa">
+<title>Ankahi Baatein | Unfiltered Shayar</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap');
+:root{--bg:#fff9fb;--panel:#ffffff;--panel2:#fff0f5;--pink:#d98da8;--pink-dark:#b96f8d;--muted:#907985;--ink:#493943;--line:#f1dce5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Serif Devanagari',sans-serif}
+header{position:sticky;top:0;z-index:5;background:rgba(255,249,251,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1050px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-family:'Noto Serif Devanagari',serif;font-size:21px;color:var(--pink-dark);font-weight:700}.brand small{display:block;font:10px 'DM Sans',sans-serif;letter-spacing:3px;color:var(--muted);margin-top:2px}
+nav{display:flex;gap:20px;align-items:center}nav a{color:#725e69;text-decoration:none;font-size:13px}nav a:hover{color:var(--pink-dark)}button{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--pink);background:var(--pink);color:white;padding:10px 16px;border-radius:22px;font-weight:600;font-size:13px}.btn:hover{background:var(--pink-dark)}.btn-outline{background:white;color:var(--pink-dark)}
+.hero{max-width:1050px;margin:auto;padding:75px 22px 65px;text-align:center}.eyebrow{color:var(--pink-dark);font-size:11px;letter-spacing:3px;text-transform:uppercase}
+h1{font-family:'Noto Serif Devanagari',serif;font-size:clamp(42px,8vw,76px);line-height:1.25;margin:18px 0 12px;color:#674b59;font-weight:600}.hero p{color:#8d7481;font-family:'Noto Serif Devanagari',serif;font-size:clamp(16px,2.4vw,21px);line-height:1.9;margin:0 auto 24px;max-width:650px}
+.signature{color:var(--pink-dark);font-size:12px;letter-spacing:2px}.ornament{color:#dba9bc;font-size:20px;margin:24px 0 0}
+.wrap{max-width:1050px;margin:auto;padding:0 22px 65px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:5px 0 22px}.section-head h2{font-family:'Noto Serif Devanagari',serif;font-size:26px;margin:0;color:#674b59}.section-head p{color:var(--muted);font-size:13px;margin:6px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 24px}.chip{border:1px solid var(--line);color:#826b78;background:white;border-radius:30px;padding:8px 13px;font-size:12px}.chip.active,.chip:hover{border-color:var(--pink);color:var(--pink-dark);background:#fff0f5}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px;min-height:195px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 5px 18px rgba(170,112,139,.06);transition:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(170,112,139,.11)}.card .category{font-size:10px;letter-spacing:2px;color:var(--pink-dark);text-transform:uppercase}.poem{white-space:pre-line;font-family:'Noto Serif Devanagari',serif;font-size:19px;line-height:2;margin:16px 0;color:#5a4651}.card-foot{display:flex;justify-content:space-between;align-items:center;color:#a18d98;font-size:11px;border-top:1px solid #f5e8ee;padding-top:12px}.actions{display:flex;gap:7px}.tiny{border:0;background:transparent;color:var(--pink-dark);font-size:11px;padding:3px}
+.empty{grid-column:1/-1;text-align:center;padding:42px 20px;color:var(--muted);border:1px dashed #e8cbd8;border-radius:14px;font-family:'Noto Serif Devanagari',serif;background:#fff}
+.about{border-top:1px solid var(--line);padding:38px 22px;text-align:center;color:var(--muted);font-family:'Noto Serif Devanagari',serif;line-height:2;background:#fff5f8}.about strong{display:block;color:var(--pink-dark);font-size:20px;font-weight:500}
+footer{text-align:center;padding:19px;border-top:1px solid var(--line);color:#a18d98;font-size:11px;letter-spacing:1px;background:#fff}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(75,48,62,.28);z-index:10;align-items:center;justify-content:center;padding:18px}.modal-backdrop.show{display:flex}.modal{width:min(560px,100%);background:white;border:1px solid var(--line);border-radius:16px;padding:24px;max-height:90vh;overflow:auto;box-shadow:0 12px 40px rgba(90,50,70,.15)}.modal h3{font-family:'Noto Serif Devanagari',serif;font-size:23px;margin:0 0 18px;color:var(--pink-dark)}
+label{display:block;font-size:12px;color:#806a76;margin:13px 0 7px}input,textarea,select{width:100%;background:#fffafd;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:12px;font:14px 'DM Sans','Noto Serif Devanagari',sans-serif}textarea{min-height:150px;resize:vertical;line-height:1.8}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.note{font-size:11px;color:#a18d98;line-height:1.6;margin-top:12px}
+@media(max-width:650px){nav a{display:none}.nav{padding:14px 16px}.hero{padding:58px 18px 48px}.wrap{padding:0 16px 48px}.grid{grid-template-columns:1fr}.card{padding:21px}.section-head{align-items:start;flex-direction:column}.poem{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div class="brand">अनकही बातें<small>ANKAHI BAATEIN</small></div>
+  <nav><a href="#home">Home</a><a href="#writings">रचनाएँ</a><a href="#about">मेरे बारे में</a><button class="btn btn-outline" id="openAdd">+ लिखें</button></nav>
+</div></header>
+<main id="home">
+<section class="hero">
+  <div class="eyebrow">A space for unspoken words</div>
+  <h1>अनकही बातें</h1>
+  <p>कुछ अल्फ़ाज़ काग़ज़ के लिए होते हैं,<br>और कुछ सिर्फ़ दिल के लिए...</p>
+  <div class="signature">BY UNFILTERED SHAYAR</div>
+  <div class="ornament">— ✦ —</div>
+</section>
+<section class="wrap" id="writings">
+  <div class="section-head"><div><h2>लफ़्ज़ों का सफ़र</h2><p>जो महसूस हुआ, वही यहाँ लिखा गया।</p></div><button class="btn" id="openAdd2">अपनी बात लिखें +</button></div>
+  <div class="filters" id="filters">
+    <button class="chip active" data-filter="सभी">सभी</button>
+    <button class="chip" data-filter="शायरी">शायरी</button>
+    <button class="chip" data-filter="ग़ज़ल">ग़ज़ल</button>
+    <button class="chip" data-filter="नज़्म">नज़्म</button>
+    <button class="chip" data-filter="दिल की बातें">दिल की बातें</button>
+  </div>
+  <div class="grid" id="posts"></div>
+</section>
+<section class="about" id="about"><strong>Unfiltered Shayar</strong>ना हर बात कहनी ज़रूरी है,<br>ना हर एहसास छुपाना...<br>कुछ बातें बस लिख दी जाती हैं।</section>
+</main>
+<footer>© <span id="year"></span> ANKAHI BAATEIN · ALL WORDS, ALL FEELINGS</footer>
+
+<div class="modal-backdrop" id="modal">
+ <div class="modal">
+  <h3 id="modalTitle">अपनी बात लिखें</h3>
+  <form id="postForm">
+   <input type="hidden" id="postId">
+   <label for="title">शीर्षक (वैकल्पिक)</label><input id="title" maxlength="80" placeholder="जैसे: अधूरी मोहब्बत">
+   <label for="category">श्रेणी</label><select id="category"><option>शायरी</option><option>ग़ज़ल</option><option>नज़्म</option><option>दिल की बातें</option></select>
+   <label for="body">तेरे अल्फ़ाज़</label><textarea id="body" required maxlength="5000" placeholder="यहाँ अपने दिल की बात लिख..."></textarea>
+   <div class="modal-actions"><button type="button" class="btn btn-outline" id="closeModal">रद्द करें</button><button class="btn" type="submit">सहेजें</button></div>
+   <div class="note">यह शुरुआती डेमो है: पोस्ट इसी ब्राउज़र में सेव होंगी। इसे सबके लिए ऑनलाइन प्रकाशित करने और सुरक्षित admin login के लिए hosting/backend जोड़ना होगा।</div>
+  </form>
+ </div>
+</div>
+<script>
+const KEY='ankahi-baatein-posts-v1';
+const starter=[
+{id:'sample1',title:'कुछ बातें',category:'शायरी',body:'कुछ अल्फ़ाज़ होंठों तक आकर ठहर जाते हैं,\nकुछ एहसास ख़ामोशी में ही बिखर जाते हैं।',date:'नमूना'},
+{id:'sample2',title:'ख़ामोशी',category:'दिल की बातें',body:'हर ख़ामोशी का मतलब नाराज़गी नहीं होता,\nकभी-कभी इंसान के पास कहने को बहुत कुछ होता है।',date:'नमूना'}
+];
+let posts=JSON.parse(localStorage.getItem(KEY)||'null')||starter;
+let activeFilter='सभी';
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(KEY,JSON.stringify(posts));render()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+ const list=posts.filter(p=>activeFilter==='सभी'||p.category===activeFilter);
+ $('posts').innerHTML=list.length?list.slice().reverse().map(p=>`<article class="card"><div><div class="category">${esc(p.category)}</div>${p.title?`<div style="color:#c8bda9;margin-top:9px;font-size:13px">${esc(p.title)}</div>`:''}<div class="poem">${esc(p.body)}</div></div><div class="card-foot"><span>${esc(p.date||'')}</span><span class="actions"><button class="tiny" onclick="editPost('${esc(p.id)}')">EDIT</button><button class="tiny" onclick="deletePost('${esc(p.id)}')">DELETE</button></span></div></article>`).join(''):'<div class="empty">अभी यहाँ कोई रचना नहीं है।<br>पहली बात लिखने की शुरुआत कर।</div>';
+}
+function openModal(p){$('modal').classList.add('show');$('modalTitle').textContent=p?'रचना बदलें':'अपनी बात लिखें';$('postId').value=p?.id||'';$('title').value=p?.title||'';$('category').value=p?.category||'शायरी';$('body').value=p?.body||''}
+function closeModal(){$('modal').classList.remove('show')}
+$('openAdd').onclick=$('openAdd2').onclick=()=>openModal();
+$('closeModal').onclick=closeModal;
+$('modal').onclick=e=>{if(e.target===$('modal'))closeModal()};
+$('postForm').onsubmit=e=>{e.preventDefault();const id=$('postId').value;const item={id:id||String(Date.now()),title:$('title').value.trim(),category:$('category').value,body:$('body').value.trim(),date:new Date().toLocaleDateString('hi-IN')};if(id)posts=posts.map(p=>p.id===id?item:p);else posts.push(item);save();closeModal();e.target.reset()};
+window.editPost=id=>{const p=posts.find(x=>x.id===id);if(p)openModal(p)};
+window.deletePost=id=>{if(confirm('क्या इस रचना को हटाना चाहते हैं?')){posts=posts.filter(p=>p.id!==id);save()}};
+$('filters').onclick=e=>{const b=e.target.closest('[data-filter]');if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()};
+$('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
