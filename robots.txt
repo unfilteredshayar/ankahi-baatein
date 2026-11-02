@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unfilteredshayar.github.io/ankahi-baatein/sitemap.xml
